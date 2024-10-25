@@ -1,5 +1,4 @@
 # TODO: install and package apidocs
-# NOTE: don't build yet, currently it's used only as wrapped subproject in libspiel
 #
 # Conditional build:
 %bcond_with	apidocs		# API documentation (not installed)
@@ -10,7 +9,7 @@ Summary(pl.UTF-8):	Biblioteka współdzielona dla klientów syntezy mowy
 Name:		libspeechprovider
 Version:	1.0.3
 %define	gitref	SPEECHPROVIDER_%(echo %{version} | tr . _)
-Release:	0.1
+Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/project-spiel/libspeechprovider/tags
