@@ -8,14 +8,14 @@
 Summary:	Shared library for speech synthesis clients
 Summary(pl.UTF-8):	Biblioteka współdzielona dla klientów syntezy mowy
 Name:		libspeechprovider
-Version:	1.0.1
+Version:	1.0.3
 %define	gitref	SPEECHPROVIDER_%(echo %{version} | tr . _)
 Release:	0.1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/project-spiel/libspeechprovider/tags
 Source0:	https://github.com/project-spiel/libspeechprovider/archive/%{gitref}/%{name}-%{gitref}.tar.gz
-# Source0-md5:	55f67d4a6840057f9090f4e72b8e6a49
+# Source0-md5:	2bbc4a265d3d7f4bdea8980e9e477f85
 URL:		https://project-spiel.org/libspeechprovider/
 %{?with_apidocs:BuildRequires:	gi-docgen}
 BuildRequires:	glib2-devel >= 1:2.76
@@ -95,6 +95,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README.md
 %attr(755,root,root) %{_libdir}/libspeech-provider-1.0.so
 %{_libdir}/girepository-1.0/SpeechProvider-1.0.typelib
+%dir %{_datadir}/speech-provider
+%{_datadir}/speech-provider/org.freedesktop.Speech.Provider.xml
 
 %files devel
 %defattr(644,root,root,755)
