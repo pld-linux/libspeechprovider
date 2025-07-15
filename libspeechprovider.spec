@@ -69,10 +69,10 @@ Dokumentacja API biblioteki speech-provider.
 %setup -q -n %{name}-%{gitref}
 
 %build
-%meson build \
+%meson \
 	%{!?with_tests:-Dtests=disabled}
 
-%ninja_build -C build
+%meson_build
 
 %if %{with tests}
 %ninja_test -C build
@@ -81,7 +81,7 @@ Dokumentacja API biblioteki speech-provider.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
